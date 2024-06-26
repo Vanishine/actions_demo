@@ -12,6 +12,7 @@ jobs:
         shell: pwsh
         run: |
           ls env:
+          echo $env:HELLO
           dism /online /?
         env:
           TESTTEST: ${{ secrets.SECRET_TEST }}
