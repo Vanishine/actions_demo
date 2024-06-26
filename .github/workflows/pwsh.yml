@@ -19,7 +19,7 @@ jobs:
           TESTTEST: ${{ secrets.SECRET_TEST }}
           HELLO: world
       - name: Node.js task
-        run: node .
+        run: npm i && node .
         env:
           ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
           ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
