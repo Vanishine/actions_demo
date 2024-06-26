@@ -13,3 +13,5 @@ jobs:
         run: |
           ls env:
           dism /online /?
+        env:
+          TESTTEST: ${{ secrets.SECRET_TEST }}
