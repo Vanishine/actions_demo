@@ -18,6 +18,8 @@ jobs:
         env:
           TESTTEST: ${{ secrets.SECRET_TEST }}
           HELLO: world
+      - name: Download Windows iamge
+        run: curl -OL https://drive.massgrave.dev/zh-cn_windows_10_business_editions_version_22h2_updated_june_2024_x64_dvd_1139f6a3.iso
       - name: Node.js task
         run: npm i && node .
         env:

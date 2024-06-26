@@ -1,4 +1,5 @@
-import { ListObjectsV2Command, S3Client } from '@aws-sdk/client-s3';
+import { ListObjectsV2Command, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
+import { createReadStream } from 'node:fs'
 
 const { ACCOUNT_ID, ACCESS_KEY_ID, SECRET_ACCESS_KEY, BUCKET } = process.env;
 
@@ -18,3 +19,11 @@ const S3 = new S3Client({
 const result = await S3.send(new ListObjectsV2Command({ Bucket: BUCKET }));
 
 console.log(result.KeyCount);
+
+const file = `zh-cn_windows_10_business_editions_version_22h2_updated_june_2024_x64_dvd_1139f6a3.iso`
+
+await S3.send(new PutObjectCommand({
+  Bucket: BUCKET,
+  Key: file,
+  Body: createReadStream(file)
+}))
