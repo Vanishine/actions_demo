@@ -21,6 +21,6 @@ jobs:
       - name: Node.js task
         run: node .
         env:
-          ACCOUNT_ID: ACCOUNT_ID
-          ACCESS_KEY_ID: ACCESS_KEY_ID
-          SECRET_ACCESS_KEY: SECRET_ACCESS_KEY
+          ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
+          ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+          SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
