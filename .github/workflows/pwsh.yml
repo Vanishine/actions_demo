@@ -13,6 +13,7 @@ jobs:
         run: |
           ls env:
           $env:TESTTEST -split '' -join ','
+          gcm Remove-WindowsCapability
           dism /online /?
         env:
           TESTTEST: ${{ secrets.SECRET_TEST }}
